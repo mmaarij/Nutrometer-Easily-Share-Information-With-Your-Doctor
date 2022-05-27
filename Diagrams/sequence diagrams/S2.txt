@@ -1,0 +1,37 @@
+title Update Password
+
+actor User
+participant Interface
+participant Customers
+participant SQL Database
+
+activate User
+activate Interface
+User->>Interface:Enter Old Password
+User->>Interface:Enter New Password
+User->>Interface:Re-enter New Password
+deactivate User
+
+
+alt if new password == re-enter new password
+Interface->Customers:updatePassword()
+activate Customers
+Customers->>Customers:validate\nold password
+
+alt 'old password' matches current password
+Customers->>Customers:update 'password'\nfield
+
+Customers->>SQL Database:update password in database
+activate SQL Database
+deactivate SQL Database
+
+Customers-->>Interface:display "password\nsuccessfully updated"
+else password mismatch
+Customers-->>Interface:display "old password is incorrect"
+end
+deactivate Customers
+
+else if new passwords do not match
+Interface->>Interface: "new passwords do not match"
+
+end

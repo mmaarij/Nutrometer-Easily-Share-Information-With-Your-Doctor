@@ -1,0 +1,36 @@
+title User Login
+
+actor User
+participant Interface
+participant Customers
+database SQL Database
+
+activate User
+User->>Interface:Enter Login Details
+activate Interface
+User->>Interface:Press login button
+deactivate User
+Interface->Customers:login()
+activate Customers
+Customers->SQL Database:check if user account exists
+activate SQL Database
+
+alt User exists
+SQL Database-->>Customers:user found
+Customers->SQL Database:compare password
+
+alt Password correct
+SQL Database-->>Customers:password matches
+Customers-->>Interface:Redirect to user dashboard
+
+else Password incorrect
+SQL Database-->>Customers:password doesn't match
+Customers-->>Interface:Display "Incorrect password"\nerror
+end
+
+else User doesn't exist
+SQL Database-->>Customers:user not found
+Customers-->>Interface:Display "user not found"\nerror
+
+end
+deactivate SQL Database

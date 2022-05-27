@@ -1,0 +1,27 @@
+title Record Food Intake
+
+actor User
+participant Interface
+participant Customers
+database SQL Database
+
+activate User
+activate Interface
+User->>Interface:Press 'Record Food Intake' button
+deactivate User
+Interface->Customers:addIntake(typeOfFood)
+activate Customers
+Customers->SQL Database:check if food type exists
+activate SQL Database
+
+alt Food exists
+SQL Database-->>Customers:return calories/gram in food
+Customers->SQL Database:increment user calories
+Customers-->>Interface:Reflect new calorie count on interface
+
+else Food doesn't exist
+SQL Database-->>Customers:food not found
+Customers-->>Interface:Display error: This food item was\nnot found in the database, contact \nnutritionist for advice
+
+end
+deactivate SQL Database

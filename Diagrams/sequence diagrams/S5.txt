@@ -1,0 +1,40 @@
+title Set Daily Water Goal
+
+actor User
+participant Interface
+participant Customers
+database SQL Database
+
+activate User
+activate Interface
+User->>Interface:Press 'Set Goal' button
+deactivate User
+Interface->Customers:checkGoal()
+activate Customers
+Customers->SQL Database:check if goal already exists
+activate SQL Database
+
+alt Goal exists
+SQL Database-->>Customers:return current goal
+Customers-->>Interface:Display message: Goal already exists\ndo you want to update it
+activate User
+User->>Interface:Press 'Yes\No' button
+
+alt User pressed 'Yes'
+Interface->>Interface:Display Input Field
+User->>Interface:Enter new goal
+Interface->Customers:setGoal()
+Customers->SQL Database:update Goal
+
+
+else User pressed 'No
+Interface->>Interface:Display Current Goal
+deactivate User
+end
+
+else Goal doesn't exist
+Interface->Customers:setGoal()
+Customers->SQL Database:add Goal
+
+end
+deactivate SQL Database

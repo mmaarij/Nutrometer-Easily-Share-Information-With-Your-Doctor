@@ -1,0 +1,19 @@
+title View Customer Profiles
+
+actor Administrator
+participant Interface
+participant Admin
+database SQL Database
+
+activate Administrator
+activate Interface
+Administrator->>Interface:click 'view customer profiles' button
+deactivate Administrator
+Interface->Admin:viewCustomerProfiles
+activate Admin
+Admin->SQL Database:query list of customers
+activate SQL Database
+SQL Database-->>Admin:list of customers
+deactivate SQL Database
+Admin-->>Interface: display list of customers
+deactivate Admin

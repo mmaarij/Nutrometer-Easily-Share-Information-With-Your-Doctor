@@ -1,0 +1,27 @@
+#navbarLogo {
+  height: 6vh;
+}
+
+#logoBlock {
+}
+
+#loginBlock {
+}
+
+#section1 {
+  background: url("../../assets/img/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(50,50,50,0.5);
+  height: 150vh;
+}
+
+#brandLogo {
+  height: 10vh;
+}
+
+#navcol-1 {
+  color: rgb(0,0,0);
+}
+
