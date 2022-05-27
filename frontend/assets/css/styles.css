@@ -14,7 +14,7 @@
   background-size: cover;
   background-blend-mode: overlay;
   background-color: rgba(50,50,50,0.5);
-  height: 150vh;
+  height: 100%;
 }
 
 #brandLogo {

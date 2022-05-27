@@ -54,3 +54,41 @@
   font-size: 60px;
 }
 
+#calorieInput {
+  color: rgb(255,255,255);
+  background: #ffffff;
+}
+
+#homeBtn:hover, #profileBtn:hover {
+  color: var(--yellow);
+}
+
+#homeBtn {
+  color: #ffffff;
+}
+
+#navIcon:hover {
+  color: #d56767;
+}
+
+#navIcon {
+  color: #da2f2f;
+}
+
+hr {
+  border-color: rgba(0,0,0,0.3);
+}
+
+#TrackIntake {
+  margin-bottom: 40px;
+}
+
+#loginBtn:hover {
+  background-color: #2c99ba;
+  color: #ffffff;
+}
+
+#profileBtn {
+  color: #ffd5b6;
+}
+
