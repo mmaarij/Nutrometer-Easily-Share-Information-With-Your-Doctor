@@ -84,11 +84,20 @@ hr {
 }
 
 #loginBtn:hover {
+  background-color: #da2f2f;
+  color: #ffffff;
+}
+
+#adminLoginBtn:hover {
   background-color: #2c99ba;
   color: #ffffff;
 }
 
 #profileBtn {
-  color: #ffd5b6;
+  color: #ffffff;
+}
+
+.form-cont {
+  margin-top: 45px;
 }
 
