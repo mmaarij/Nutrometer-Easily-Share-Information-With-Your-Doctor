@@ -8,8 +8,26 @@
 #loginBlock {
 }
 
+#section1AddUser {
+  background: url("../../assets/img/bg4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(50,50,50,0.5);
+  height: 100%;
+}
+
 #section1Profile {
   background: url("../../assets/img/fitness-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(50,50,50,0.5);
+  height: 100%;
+}
+
+#section1AdminHome {
+  background: url("../../assets/img/bg5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: overlay;

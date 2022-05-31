@@ -54,6 +54,11 @@
   font-size: 60px;
 }
 
+#emailInput {
+  color: rgb(255,255,255);
+  background: #ffffff;
+}
+
 #calorieInput {
   color: rgb(255,255,255);
   background: #ffffff;
